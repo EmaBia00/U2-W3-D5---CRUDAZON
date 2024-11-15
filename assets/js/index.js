@@ -42,15 +42,16 @@ const getProducts = function () {
         cardTitle.className = "card-title";
         cardTitle.innerText = prod.name;
 
+        const cardDescContainer = document.createElement("div");
+        cardDescContainer.style.height = "140px";
+
         const cardDescription = document.createElement("p");
         cardDescription.className = "card-text";
         cardDescription.innerText = prod.description;
-        cardDescription.style.height = "80px";
 
         const cardPrice = document.createElement("p");
         cardPrice.className = "card-text text-primary";
         cardPrice.innerText = prod.price + "€";
-        cardPrice.style.marginTop = "60px";
 
         // Gruppo Bottoni
         const btnGroup = document.createElement("div");
@@ -70,7 +71,8 @@ const getProducts = function () {
 
         // Appends
         btnGroup.append(detailBtn, editBtn);
-        cardBody.append(cardTitle, cardDescription, cardPrice, btnGroup);
+        cardDescContainer.appendChild(cardDescription);
+        cardBody.append(cardTitle, cardDescContainer, cardPrice, btnGroup);
         card.append(picture, cardBody);
         col.appendChild(card);
         containerCards.appendChild(col);
