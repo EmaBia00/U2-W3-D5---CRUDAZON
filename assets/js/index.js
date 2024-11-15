@@ -48,8 +48,9 @@ const getProducts = function () {
         cardDescription.style.height = "80px";
 
         const cardPrice = document.createElement("p");
-        cardPrice.className = "card-text mt-3";
+        cardPrice.className = "card-text text-primary";
         cardPrice.innerText = prod.price + "€";
+        cardPrice.style.marginTop = "60px";
 
         // Gruppo Bottoni
         const btnGroup = document.createElement("div");
